@@ -34,12 +34,13 @@ const Footer = () => {
             <Image
               src="/newsletter-illustration.svg"
               alt="Newsletter"
-              className="w-48 h-auto"
+              width={200}
+              height={200}
             />
           </div>
         </div>
       </div>
-      {/* Main Footer Content */}xw
+      {/* Main Footer Content */}
       <div className="container mx-auto pt-32 pb-8 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand and Social */}
