@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -30,7 +31,7 @@ const Footer = () => {
             </button>
           </div>
           <div className="hidden lg:block">
-            <img
+            <Image
               src="/newsletter-illustration.svg"
               alt="Newsletter"
               className="w-48 h-auto"
@@ -38,8 +39,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
-      {/* Main Footer Content */}
+      {/* Main Footer Content */}xw
       <div className="container mx-auto pt-32 pb-8 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand and Social */}
