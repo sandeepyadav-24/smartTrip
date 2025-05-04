@@ -64,7 +64,7 @@ export default function AboutUs() {
                 Who <span className="text-[#B08968]">We Are?</span>
               </h2>
               <p className="mt-4 text-gray-600 leading-relaxed">
-                We're all about creating unforgettable experiences for our
+                We&apos;re all about creating unforgettable experiences for our
                 guests. Our journey began with a simple passion for exploring
                 the beauty of the World.
               </p>

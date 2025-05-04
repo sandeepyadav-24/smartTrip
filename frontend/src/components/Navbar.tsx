@@ -1,9 +1,8 @@
 "use client";
-
 import { useState } from "react";
 import Link from "next/link";
 import AuthModal from "./AuthModal";
-import Image from "next/image";
+
 import { IoLogoWhatsapp } from "react-icons/io";
 
 export default function Navbar() {
