@@ -193,8 +193,8 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-4">About Us</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/about/our-story" className="hover:text-gray-300">
-                  Our Story
+                <Link href="/about-us" className="hover:text-gray-300">
+                  About us
                 </Link>
               </li>
               <li>

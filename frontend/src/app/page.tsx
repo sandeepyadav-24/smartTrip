@@ -1,3 +1,5 @@
+"use client";
+import React, { useRef } from "react";
 import Navbar from "../components/Navbar";
 
 import Footer from "../components/Footer";
@@ -9,12 +11,13 @@ import Hero from "../components/Hero";
 import Search from "../components/Search";
 
 export default function Home() {
+  const searchRef = useRef<HTMLElement>(null as unknown as HTMLElement);
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
+      <Navbar searchRef={searchRef} />
       <main className="flex-grow">
         <Hero />
-        <Search />
+        <Search ref={searchRef} />
         <Offer />
         <Experience />
         <Explore />

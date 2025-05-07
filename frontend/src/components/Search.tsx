@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, ReactNode } from "react";
+import React, { useState, ReactNode, forwardRef } from "react";
 
 interface Tab {
   id: string;
@@ -85,12 +85,12 @@ const tabs: Tab[] = [
   },
 ];
 
-export default function Search() {
+const Search = forwardRef<HTMLElement, any>((props, ref) => {
   const [activeTab, setActiveTab] = useState("flights");
   const [isTabsOpen, setIsTabsOpen] = useState(false);
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-6 sm:py-12">
+    <section ref={ref} className="max-w-7xl mx-auto px-4 py-6 sm:py-12">
       <div className="bg-white rounded-3xl shadow-lg p-6 sm:p-8">
         {/* Mobile Tab Selector */}
         <div className="sm:hidden mb-6">
@@ -262,4 +262,6 @@ export default function Search() {
       </div>
     </section>
   );
-}
+});
+
+export default Search;

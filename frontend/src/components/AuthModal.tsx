@@ -8,8 +8,42 @@ interface AuthModalProps {
 }
 
 export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
+  const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState("");
-  const [otp, setOtp] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
+
+    try {
+      const endpoint = isLogin ? "/api/auth/login" : "/api/auth/register";
+      const response = await fetch(`http://localhost:5000${endpoint}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Something went wrong");
+      }
+
+      // Store the token in localStorage
+      localStorage.setItem("token", data.token);
+      onClose();
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   if (!isOpen) return null;
 
@@ -69,6 +103,12 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
 
             {/* Login Form */}
             <div className="space-y-6">
+              {error && (
+                <div className="bg-red-50 text-red-500 p-3 rounded-lg text-sm">
+                  {error}
+                </div>
+              )}
+
               <div>
                 <div className="relative">
                   <input
@@ -87,15 +127,19 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
               <div>
                 <input
                   type="text"
-                  value={otp}
-                  onChange={(e) => setOtp(e.target.value)}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter OTP"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#B08968] focus:border-transparent"
                 />
               </div>
 
-              <button className="w-full bg-[#B08968] text-white py-3 rounded-lg hover:bg-[#97775A] transition-colors">
-                LOGIN
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-[#B08968] text-white py-3 rounded-lg font-medium hover:bg-[#997559] transition-colors disabled:opacity-50"
+              >
+                {loading ? "Loading..." : isLogin ? "Login" : "Register"}
               </button>
 
               <div className="relative text-center">
@@ -136,12 +180,16 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
             </div>
 
             {/* Register Link */}
-            <p className="text-center mt-8 text-gray-600">
-              Don&apos;t have account?{" "}
-              <a href="#" className="text-[#B08968] font-medium">
-                Register Now
-              </a>
-            </p>
+            <div className="mt-4 text-center">
+              <button
+                onClick={() => setIsLogin(!isLogin)}
+                className="text-[#B08968] hover:underline"
+              >
+                {isLogin
+                  ? "Don't have an account? Register"
+                  : "Already have an account? Login"}
+              </button>
+            </div>
           </div>
 
           {/* Bottom Landmarks */}

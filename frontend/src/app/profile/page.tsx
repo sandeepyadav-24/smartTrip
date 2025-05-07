@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
@@ -150,6 +150,7 @@ export default function ProfilePage() {
   const [activeTab, setActiveTab] = useState("account");
   const [bookingTab, setBookingTab] = useState("flights");
   const [showAddCard, setShowAddCard] = useState(false);
+  const dummyRef = useRef<HTMLElement>(null as unknown as HTMLElement);
 
   // Example bookings data
   const bookings = [
@@ -221,7 +222,7 @@ export default function ProfilePage() {
 
   return (
     <div className="bg-[#f5f5f5] min-h-screen flex flex-col">
-      <Navbar />
+      <Navbar searchRef={dummyRef} />
       <AddCardModal open={showAddCard} onClose={() => setShowAddCard(false)} />
       <main className="flex-grow max-w-4xl mx-auto w-full mt-8">
         <div className="flex flex-col items-center">

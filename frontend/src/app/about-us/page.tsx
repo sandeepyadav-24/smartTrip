@@ -1,9 +1,11 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import Image from "next/image";
 
 export default function AboutUs() {
+  const dummyRef = useRef<HTMLElement>(null as unknown as HTMLElement);
   const services = [
     {
       icon: (
@@ -54,7 +56,7 @@ export default function AboutUs() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar searchRef={dummyRef} />
       <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
