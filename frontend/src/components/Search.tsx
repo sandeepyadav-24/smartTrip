@@ -41,7 +41,11 @@ const tabs: Tab[] = [
   },
 ];
 
-const Search = forwardRef<HTMLElement, any>((_, ref) => {
+interface SearchProps {
+  className?: string;
+}
+
+const Search = forwardRef<HTMLElement, SearchProps>((_, ref) => {
   const [activeTab, setActiveTab] = useState("flights");
   const [isTabsOpen, setIsTabsOpen] = useState(false);
 
@@ -220,5 +224,7 @@ const Search = forwardRef<HTMLElement, any>((_, ref) => {
     </section>
   );
 });
+
+Search.displayName = "Search";
 
 export default Search;

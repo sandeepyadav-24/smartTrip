@@ -114,71 +114,73 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
                 </div>
               )}
 
-              <div>
-                <div className="relative">
+              <form className="space-y-6">
+                <div>
+                  <div className="relative">
+                    <input
+                      type="text"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter Email / Phone Number"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#B08968] focus:border-transparent"
+                    />
+                    <button className="absolute right-3 top-1/2 -translate-y-1/2 text-[#B08968] font-medium">
+                      SEND OTP
+                    </button>
+                  </div>
+                </div>
+
+                <div>
                   <input
                     type="text"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter Email / Phone Number"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Enter OTP"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#B08968] focus:border-transparent"
                   />
-                  <button className="absolute right-3 top-1/2 -translate-y-1/2 text-[#B08968] font-medium">
-                    SEND OTP
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full bg-[#B08968] text-white py-3 rounded-lg font-medium hover:bg-[#997559] transition-colors disabled:opacity-50"
+                >
+                  {loading ? "Loading..." : isLogin ? "Login" : "Register"}
+                </button>
+
+                <div className="relative text-center">
+                  <div className="absolute inset-0 flex items-center">
+                    <div className="w-full border-t border-gray-300"></div>
+                  </div>
+                  <span className="relative bg-white px-4 text-gray-500 text-sm">
+                    OR
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-3 gap-4">
+                  <button className="flex items-center justify-center p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                    <FaGoogle className="text-2xl" />
+                  </button>
+                  <button className="flex items-center justify-center p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                    <FaFacebook className="text-2xl" />
+                  </button>
+                  <button className="flex items-center justify-center p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                    <FaApple className="text-2xl" />
                   </button>
                 </div>
-              </div>
+              </form>
 
-              <div>
-                <input
-                  type="text"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Enter OTP"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#B08968] focus:border-transparent"
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full bg-[#B08968] text-white py-3 rounded-lg font-medium hover:bg-[#997559] transition-colors disabled:opacity-50"
-              >
-                {loading ? "Loading..." : isLogin ? "Login" : "Register"}
-              </button>
-
-              <div className="relative text-center">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-gray-300"></div>
-                </div>
-                <span className="relative bg-white px-4 text-gray-500 text-sm">
-                  OR
-                </span>
-              </div>
-
-              <div className="grid grid-cols-3 gap-4">
-                <button className="flex items-center justify-center p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                  <FaGoogle className="text-2xl" />
-                </button>
-                <button className="flex items-center justify-center p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                  <FaFacebook className="text-2xl" />
-                </button>
-                <button className="flex items-center justify-center p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                  <FaApple className="text-2xl" />
+              {/* Register Link */}
+              <div className="mt-4 text-center">
+                <button
+                  onClick={() => setIsLogin(!isLogin)}
+                  className="text-[#B08968] hover:underline"
+                >
+                  {isLogin
+                    ? "Don't have an account? Register"
+                    : "Already have an account? Login"}
                 </button>
               </div>
-            </div>
-
-            {/* Register Link */}
-            <div className="mt-4 text-center">
-              <button
-                onClick={() => setIsLogin(!isLogin)}
-                className="text-[#B08968] hover:underline"
-              >
-                {isLogin
-                  ? "Don't have an account? Register"
-                  : "Already have an account? Login"}
-              </button>
             </div>
           </div>
 
