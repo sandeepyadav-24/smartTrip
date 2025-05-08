@@ -14,8 +14,8 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
+  //const [error, setError] = useState("");
+  //const [loading, setLoading] = useState(false);
 
   {
     /**const handleSubmit = async (e: React.FormEvent) => {
@@ -108,12 +108,6 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
 
             {/* Login Form */}
             <div className="space-y-6">
-              {error && (
-                <div className="bg-red-50 text-red-500 p-3 rounded-lg text-sm">
-                  {error}
-                </div>
-              )}
-
               <form className="space-y-6">
                 <div>
                   <div className="relative">
@@ -142,10 +136,9 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
 
                 <button
                   type="submit"
-                  disabled={loading}
-                  className="w-full bg-[#B08968] text-white py-3 rounded-lg font-medium hover:bg-[#997559] transition-colors disabled:opacity-50"
+                  className="w-full bg-[#B08968] text-white py-3 rounded-lg font-medium hover:bg-[#997559] transition-colors"
                 >
-                  {loading ? "Loading..." : isLogin ? "Login" : "Register"}
+                  {isLogin ? "Login" : "Register"}
                 </button>
 
                 <div className="relative text-center">
