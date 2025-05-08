@@ -6,7 +6,7 @@ import { FaHotel } from "react-icons/fa";
 import { RiLuggageDepositFill } from "react-icons/ri";
 import { GiCruiser } from "react-icons/gi";
 import Link from "next/link";
-import Image from "next/image";
+
 interface Tab {
   id: string;
   label: string;
@@ -41,7 +41,7 @@ const tabs: Tab[] = [
   },
 ];
 
-const Search = forwardRef<HTMLElement, any>((props, ref) => {
+const Search = forwardRef<HTMLElement, any>((_, ref) => {
   const [activeTab, setActiveTab] = useState("flights");
   const [isTabsOpen, setIsTabsOpen] = useState(false);
 

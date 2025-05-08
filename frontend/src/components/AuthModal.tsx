@@ -17,7 +17,8 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  {
+    /**const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
     setLoading(true);
@@ -46,7 +47,8 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
     } finally {
       setLoading(false);
     }
-  };
+  }; */
+  }
 
   if (!isOpen) return null;
 

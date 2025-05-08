@@ -18,7 +18,7 @@ const FlightResultCard: React.FC<FlightResultCardProps> = ({
   reviews,
   times,
   duration,
-  stops,
+
   price,
 }) => {
   return (
