@@ -1,6 +1,12 @@
 "use client";
 import React, { useState, ReactNode, forwardRef } from "react";
-
+import { FaCar } from "react-icons/fa";
+import { FaPlaneDeparture } from "react-icons/fa6";
+import { FaHotel } from "react-icons/fa";
+import { RiLuggageDepositFill } from "react-icons/ri";
+import { GiCruiser } from "react-icons/gi";
+import Link from "next/link";
+import Image from "next/image";
 interface Tab {
   id: string;
   label: string;
@@ -11,77 +17,27 @@ const tabs: Tab[] = [
   {
     id: "flights",
     label: "Flights",
-    icon: (
-      <svg
-        className="w-6 h-6"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <path d="M20.56 3.34a4 4 0 0 0-5.66 0l-1.8 1.8-7.02 7.02-3.76 3.76a2 2 0 0 0 2.83 2.83l3.76-3.76 7.02-7.02 1.8-1.8a4 4 0 0 0 0-5.66l-1.8 1.8a2 2 0 0 1 0 2.83l-1.8 1.8L8.93 13.1l-1.41-1.41L13.1 8.93l1.8-1.8a2 2 0 0 1 2.83 0l1.8-1.8z" />
-      </svg>
-    ),
+    icon: <FaPlaneDeparture />,
   },
   {
     id: "hotels",
     label: "Hotels",
-    icon: (
-      <svg
-        className="w-6 h-6"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <path d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4zm-6 8H3v-2h10v2zm10-4c0 1.1-.9 2-2 2h-2V9h2c1.1 0 2 .9 2 2z" />
-      </svg>
-    ),
+    icon: <FaHotel />,
   },
   {
     id: "cruises",
     label: "Cruises",
-    icon: (
-      <svg
-        className="w-6 h-6"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <path d="M20 21c-1.39 0-2.78-.47-4-1.32-2.44 1.71-5.56 1.71-8 0C6.78 20.53 5.39 21 4 21H2v2h2c1.38 0 2.74-.35 4-.99 2.52 1.29 5.48 1.29 8 0 1.26.65 2.62.99 4 .99h2v-2h-2zM3.95 19H4c1.6 0 3.02-.88 4-2 .98 1.12 2.4 2 4 2s3.02-.88 4-2c.98 1.12 2.4 2 4 2h.05l1.9-6.68c.11-.37.04-1.06-.66-1.28L20 10.62V6c0-1.1-.9-2-2-2h-3V1H9v3H6c-1.1 0-2 .9-2 2v4.62l-1.29.42c-.63.19-.81.84-.66 1.28L3.95 19z" />
-      </svg>
-    ),
+    icon: <GiCruiser />,
   },
   {
     id: "packages",
     label: "Packages",
-    icon: (
-      <svg
-        className="w-6 h-6"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <path d="M20 6h-3V4c0-1.11-.89-2-2-2H9c-1.11 0-2 .89-2 2v2H4c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zM9 4h6v2H9V4zm11 15H4v-2h16v2zm0-5H4V8h3v2h2V8h6v2h2V8h3v6z" />
-      </svg>
-    ),
+    icon: <RiLuggageDepositFill />,
   },
   {
     id: "cabs",
     label: "Cabs",
-    icon: (
-      <svg
-        className="w-6 h-6"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.08 3.11H5.77L6.85 7zM19 17H5v-5h14v5z" />
-      </svg>
-    ),
+    icon: <FaCar />,
   },
 ];
 
@@ -104,6 +60,7 @@ const Search = forwardRef<HTMLElement, any>((props, ref) => {
                 {tabs.find((t) => t.id === activeTab)?.label}
               </span>
             </div>
+
             <svg
               className={`w-5 h-5 transition-transform ${
                 isTabsOpen ? "rotate-180" : ""
@@ -147,7 +104,7 @@ const Search = forwardRef<HTMLElement, any>((props, ref) => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex flex-col items-center gap-2 px-6 py-2 transition-colors relative ${
+              className={`flex flex-col text-2xl items-center gap-2 px-6 py-2 transition-colors relative ${
                 activeTab === tab.id
                   ? "text-[#B08968] after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-[#B08968]"
                   : "text-gray-500 hover:text-[#B08968]"
@@ -256,7 +213,7 @@ const Search = forwardRef<HTMLElement, any>((props, ref) => {
             >
               <path d="M20.56 3.34a4 4 0 0 0-5.66 0l-1.8 1.8-7.02 7.02-3.76 3.76a2 2 0 0 0 2.83 2.83l3.76-3.76 7.02-7.02 1.8-1.8a4 4 0 0 0 0-5.66l-1.8 1.8a2 2 0 0 1 0 2.83l-1.8 1.8L8.93 13.1l-1.41-1.41L13.1 8.93l1.8-1.8a2 2 0 0 1 2.83 0l1.8-1.8z" />
             </svg>
-            Show Flights
+            <Link href="/flights">Show Flights</Link>
           </button>
         </div>
       </div>

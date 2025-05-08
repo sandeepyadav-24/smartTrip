@@ -1,6 +1,9 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { FaApple } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa6";
 
 interface AuthModalProps {
   isOpen: boolean;
@@ -73,7 +76,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
         {/* Left Side - Image */}
         <div className="w-1/2 relative hidden md:block">
           <Image
-            src="/images/login-bg.jpg"
+            src="/login.png"
             alt="Travel"
             className="w-full h-full object-cover rounded-l-3xl"
             width={1000}
@@ -153,28 +156,13 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
 
               <div className="grid grid-cols-3 gap-4">
                 <button className="flex items-center justify-center p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                  <Image
-                    src="/images/google.png"
-                    alt="Google"
-                    width={24}
-                    height={24}
-                  />
+                  <FaGoogle className="text-2xl" />
                 </button>
                 <button className="flex items-center justify-center p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                  <Image
-                    src="/images/facebook.png"
-                    alt="Facebook"
-                    width={24}
-                    height={24}
-                  />
+                  <FaFacebook className="text-2xl" />
                 </button>
                 <button className="flex items-center justify-center p-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                  <Image
-                    src="/images/apple.png"
-                    alt="FaceApplebook"
-                    width={24}
-                    height={24}
-                  />
+                  <FaApple className="text-2xl" />
                 </button>
               </div>
             </div>
@@ -193,22 +181,6 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
           </div>
 
           {/* Bottom Landmarks */}
-          <div className="mt-auto pt-8 flex justify-between">
-            <Image
-              src="/images/taj-mahal.png"
-              alt="Taj Mahal"
-              width={100}
-              height={100}
-              className="h-16 opacity-20"
-            />
-            <Image
-              src="/images/italy.png"
-              alt="Italy Landmarks"
-              width={100}
-              height={100}
-              className="h-16 opacity-20"
-            />
-          </div>
         </div>
       </div>
     </div>

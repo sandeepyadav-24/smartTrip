@@ -228,7 +228,7 @@ export default function ProfilePage() {
         <div className="flex flex-col items-center">
           <div className="relative">
             <Image
-              src="/images/profile-avatar.jpg"
+              src="https://media-del1-2.cdn.whatsapp.net/v/t61.24694-24/473401474_1000810801932553_7346626993380358886_n.jpg?ccb=11-4&oh=01_Q5Aa1QGoOwZQoEb4OfuDw0v2aqaqnbh35bJ5E5aueuzitjdCUA&oe=68294A4C&_nc_sid=5e03e0&_nc_cat=107"
               alt="Profile"
               width={120}
               height={120}

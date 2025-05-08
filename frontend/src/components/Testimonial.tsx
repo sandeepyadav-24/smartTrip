@@ -17,7 +17,7 @@ const testimonials: TestimonialData[] = [
     role: "Customer",
     content:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sit, explicabo provident hic distinctio molestias voluptates nobis alias placeat suscipit earum debitis recusandae voluptate illum expedita corrupti aliquid doloribus delectus?",
-    image: "/testimonials/john.jpg",
+    image: "/testimonials/img1.png",
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const testimonials: TestimonialData[] = [
     role: "Customer",
     content:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sit, explicabo provident hic distinctio molestias voluptates nobis alias placeat suscipit earum debitis recusandae voluptate illum expedita corrupti aliquid doloribus delectus?",
-    image: "/testimonials/ally.jpg",
+    image: "/testimonials/img2.png",
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const testimonials: TestimonialData[] = [
     role: "Customer",
     content:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sit, explicabo provident hic distinctio molestias voluptates nobis alias placeat suscipit earum debitis recusandae voluptate illum expedita corrupti aliquid doloribus delectus?",
-    image: "/testimonials/alex.jpg",
+    image: "/testimonials/img3.png",
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ const testimonials: TestimonialData[] = [
     role: "Customer",
     content:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus sit, explicabo provident hic distinctio molestias voluptates nobis alias placeat suscipit earum debitis recusandae voluptate illum expedita corrupti aliquid doloribus delectus?",
-    image: "/testimonials/sarah.jpg",
+    image: "/testimonials/img1.png",
   },
 ];
 

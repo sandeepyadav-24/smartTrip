@@ -41,7 +41,7 @@ const Hero = () => {
                 <div className="relative rounded-3xl overflow-hidden border-4 border-[#B08968] shadow-xl">
                   <div className="aspect-[3/4]">
                     <Image
-                      src="/hero/mountain.jpg"
+                      src="/hero/first.png"
                       alt="Mountain adventure"
                       fill
                       className="object-cover"
@@ -55,7 +55,7 @@ const Hero = () => {
                 <div className="relative rounded-3xl overflow-hidden border-4 border-[#B08968] shadow-xl">
                   <div className="aspect-[3/4]">
                     <Image
-                      src="/hero/island.jpg"
+                      src="/hero/second.png"
                       alt="Island view"
                       fill
                       className="object-cover"
@@ -69,7 +69,7 @@ const Hero = () => {
                 <div className="relative rounded-3xl overflow-hidden border-4 border-[#B08968] shadow-xl">
                   <div className="aspect-[3/4]">
                     <Image
-                      src="/hero/museum.jpg"
+                      src="/hero/third.png"
                       alt="Museum architecture"
                       fill
                       className="object-cover"

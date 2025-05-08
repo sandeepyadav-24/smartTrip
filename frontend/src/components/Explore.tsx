@@ -16,49 +16,55 @@ const destinations: TourDestination[] = [
     id: 1,
     name: "Big Ben",
     country: "LONDON",
-    image: "/destinations/london.jpg",
+    image:
+      "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nr2e-89jpAKpb3hDF_cgC8yA9eXNbA8gbpYkJuy9xLWO9Lm_HSu2RIDzD_c-ra3OnOeqUK1W4BuWQ9w2WTTqc2_X7AKETjj0BcCSh6dpMoGPm52yFMpDvoO-tfITg5Sp4DbB-PL=s1360-w1360-h1020-rw",
     gridClass: "col-span-1 row-span-1",
   },
   {
     id: 2,
     name: "Bali",
     country: "INDONESIA",
-    image: "/destinations/bali.jpg",
+    image:
+      "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nroCGNLI2ZkdWLluJQ7LqMGcIFnoGRfZckD4VypHxBgfZlzVVNgPcHwX2kB8kMy79DvMaY0D17tMg-mkt1t-rBURa6X8fiJroCca4214GNzXieIVgWldg7MiOg5PLr5Ji0N5He2=s1360-w1360-h1020-rw",
     gridClass: "col-span-1 row-span-2",
   },
   {
     id: 3,
     name: "Sydney",
     country: "Australia",
-    image: "/destinations/sydney.jpg",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Sydney_Opera_House_with_city.jpg/330px-Sydney_Opera_House_with_city.jpg",
     gridClass: "col-span-2 row-span-1",
   },
   {
     id: 4,
     name: "Dubai",
     country: "UAE",
-    image: "/destinations/dubai.jpg",
+    image: "https://www.holidify.com/images/tooltipImages/DUBAI.jpg",
     gridClass: "col-span-1 row-span-1",
   },
   {
     id: 5,
     name: "Phetchabun",
     country: "THAILAND",
-    image: "/destinations/phetchabun.jpg",
+    image:
+      "https://traveltradejournal.com/wp-content/uploads/2023/11/Thailand-Phetchabun.jpg",
     gridClass: "col-span-1 row-span-1",
   },
   {
     id: 6,
     name: "Paris",
     country: "FRANCE",
-    image: "/destinations/paris.jpg",
+    image:
+      "https://images.hdqwalls.com/download/paris-france-eiffel-tower-night-m2-1336x768.jpg",
     gridClass: "col-span-1 row-span-1",
   },
   {
     id: 7,
     name: "Wuxi",
     country: "CHINA",
-    image: "/destinations/wuxi.jpg",
+    image:
+      "https://img.freepik.com/free-photo/city-scenery-traffic-flow-wuxi-industrial-park-night_1127-3894.jpg",
     gridClass: "col-span-1 row-span-1",
   },
 ];

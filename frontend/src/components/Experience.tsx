@@ -58,12 +58,12 @@ const Experience = () => {
           <div className="relative">
             <div className="relative w-full h-[600px]">
               {/* Orange Circle Background */}
-              <div className="absolute inset-0 bg-[#FF8C42] rounded-full transform scale-90" />
+              {/** <div className="absolute inset-0 bg-[#FF8C42] rounded-full transform scale-90" />*/}
 
               {/* Main Image */}
               <div className="relative h-full">
                 <Image
-                  src="/experience/guide.png"
+                  src="https://harshidtravels.com/wp-content/uploads/2023/12/traveller.webp"
                   alt="Experienced Tour Guide"
                   fill
                   className="object-contain"
@@ -72,7 +72,7 @@ const Experience = () => {
               </div>
 
               {/* Mountain Hiking Card */}
-              <div className="absolute bottom-4 right-4 bg-white rounded-lg p-4 shadow-lg flex items-center gap-4">
+              {/**<div className="absolute bottom-4 right-4 bg-white rounded-lg p-4 shadow-lg flex items-center gap-4">
                 <Image
                   src="/experience/mountain.jpg"
                   alt="Mountain Hiking"
@@ -96,7 +96,7 @@ const Experience = () => {
                     </span>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               {/* Dotted Line */}
               <svg

@@ -32,7 +32,7 @@ const Footer = () => {
           </div>
           <div className="hidden lg:block">
             <Image
-              src="/newsletter-illustration.svg"
+              src="https://www.indiagodigital.in/assets/images/contact-us.png"
               alt="Newsletter"
               width={200}
               height={200}
